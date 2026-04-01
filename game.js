@@ -126,26 +126,26 @@ function drawDog() {
 
   const s = DOG_SIZE;
 
-  // Body (golden/brown)
-  ctx.fillStyle = '#D4A035';
+  // Body (RED)
+  ctx.fillStyle = '#CC3333';
   ctx.beginPath();
   ctx.ellipse(0, 0, s * 0.6, s * 0.45, 0, 0, Math.PI * 2);
   ctx.fill();
 
-  // Belly
-  ctx.fillStyle = '#F5DEB3';
+  // Belly (light red/pink)
+  ctx.fillStyle = '#FF9999';
   ctx.beginPath();
   ctx.ellipse(2, 5, s * 0.35, s * 0.25, 0, 0, Math.PI * 2);
   ctx.fill();
 
-  // Head
-  ctx.fillStyle = '#D4A035';
+  // Head (RED)
+  ctx.fillStyle = '#CC3333';
   ctx.beginPath();
   ctx.arc(s * 0.4, -s * 0.15, s * 0.35, 0, Math.PI * 2);
   ctx.fill();
 
-  // Snout
-  ctx.fillStyle = '#C49428';
+  // Snout (dark red)
+  ctx.fillStyle = '#A82828';
   ctx.beginPath();
   ctx.ellipse(s * 0.62, -s * 0.05, s * 0.18, s * 0.14, 0, 0, Math.PI * 2);
   ctx.fill();
@@ -173,8 +173,8 @@ function drawDog() {
   ctx.arc(s * 0.42, -s * 0.3, s * 0.025, 0, Math.PI * 2);
   ctx.fill();
 
-  // Ears (floppy!)
-  ctx.fillStyle = '#B8862D';
+  // Ears (darker red)
+  ctx.fillStyle = '#992222';
   ctx.beginPath();
   ctx.ellipse(s * 0.2, -s * 0.4, s * 0.12, s * 0.2, -0.3, 0, Math.PI * 2);
   ctx.fill();
@@ -183,7 +183,7 @@ function drawDog() {
   ctx.fill();
 
   // Mouth (happy!)
-  ctx.strokeStyle = '#8B6914';
+  ctx.strokeStyle = '#801818';
   ctx.lineWidth = 1.5;
   ctx.beginPath();
   ctx.arc(s * 0.58, -s * 0.0, s * 0.1, 0, Math.PI * 0.8);
@@ -198,9 +198,9 @@ function drawDog() {
     dog.flapFrame--;
   }
 
-  // Tail (wagging)
+  // Tail (wagging - RED)
   const tailWag = Math.sin(frameCount * 0.3) * 15;
-  ctx.strokeStyle = '#D4A035';
+  ctx.strokeStyle = '#CC3333';
   ctx.lineWidth = 4;
   ctx.lineCap = 'round';
   ctx.beginPath();
@@ -211,9 +211,9 @@ function drawDog() {
   );
   ctx.stroke();
 
-  // Legs
+  // Legs (dark red)
   const legAnim = Math.sin(frameCount * 0.4) * 8;
-  ctx.fillStyle = '#C49428';
+  ctx.fillStyle = '#A82828';
 
   // Front legs
   ctx.fillRect(s * 0.15, s * 0.2, 6, 14 + (gameState === 'playing' ? legAnim : 0));
@@ -223,8 +223,8 @@ function drawDog() {
   ctx.fillRect(-s * 0.3, s * 0.18, 7, 15 - (gameState === 'playing' ? legAnim * 0.8 : 0));
   ctx.fillRect(-s * 0.15, s * 0.18, 7, 15 + (gameState === 'playing' ? legAnim * 0.8 : 0));
 
-  // Paws
-  ctx.fillStyle = '#8B6914';
+  // Paws (deep red)
+  ctx.fillStyle = '#801818';
   [s * 0.15, s * 0.3, -s * 0.3, -s * 0.15].forEach((lx, i) => {
     const ly = s * 0.2 + 14 + (gameState === 'playing' ? (i % 2 === 0 ? legAnim : -legAnim) * (i < 2 ? 1 : 0.8) : 0);
     ctx.beginPath();
@@ -307,7 +307,7 @@ function flap() {
   dog.velocity = FLAP_FORCE;
   dog.flapFrame = 10;
   flapSound();
-  spawnParticles(dog.x - 10, dog.y + 10, '#F5DEB3', 3);
+  spawnParticles(dog.x - 10, dog.y + 10, '#FF9999', 3);
 }
 
 function spawnPipe() {
