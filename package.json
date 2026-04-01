@@ -1,0 +1,12 @@
+{
+  "name": "dog-game",
+  "version": "1.0.0",
+  "description": "Flappy Dog - A Flappy Bird-style HTML game with a dog character",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": ["game", "flappy-bird", "dog", "html5", "canvas", "javascript"],
+  "author": "",
+  "license": "MIT"
+}
